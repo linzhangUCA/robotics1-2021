@@ -1,0 +1,162 @@
+\documentclass[12pt,letterpaper]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\title{ENGR 3421 First Day}
+\author{Dr. Carl Frederickson}
+\institute{UCA, Physics and Astronomy}
+\date{August 20, 2020}
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}
+	\frametitle{The syllabus}
+	Go over the syllabus and hit the high points.
+\end{frame}
+
+\begin{frame}
+	\frametitle{What is a robot?}
+	Difinition from the web:
+	\begin{itemize}
+		\item<1-> (especially in science fiction) a machine resembling a human being and able to replicate certain human movements and functions automatically.
+		\item<2-> a machine capable of carrying out a complex series of actions automatically, especially one programmable by a computer.
+		\item<3-> a person who behaves in a mechanical or unemotional manner.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{What is a robot?}
+	Difinition from the web:
+	\begin{itemize}
+		\item a machine capable of carrying out a complex series of actions automatically, especially one programmable by a computer.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Your friend for the semester}
+	One of my goals for this course has always been to make sure that the material is accessible. To that end, 
+	\begin{itemize}
+		\item all of the software that we will be using is open source
+		\item the computers are machines that were slated to be retired
+		\item much of the reference materials will be online
+	\end{itemize}
+	The computer at your table is for you to use this semester and next. The computer, mouse, and power cord can be taken home to work on. The monitors and keyboards have to stay in the classroom.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Operating System}
+	\begin{itemize}
+		\item<1-> flash drive will install Unbuntu 18.04
+		\item<2-> this is not the latest LTS version 
+		\item<3-> you will end up in a windowed interface by default
+		\item<4-> ubuntu.com
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	You will have the ability to customize your system to your liking. At times you may find that you need to add software. As the "super user" of your system you can do this. You can also break the system this way. 
+	\begin{itemize}
+		\item<2-> make sure any project work is backed up (github is great for this)
+		\item<3-> keep a log in your design notebook of any changes that you make to your system
+		\item<4-> if you need to, rebuild the system on your machine to get back to business
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Installation}
+	\begin{itemize}
+		\item insert the thumb drive while the power is off
+		\item make sure that you are plugged into the internet
+		\item hit the power button and press the F12 button right away, don't hold it down keep pressing it over and over again until you see "Preparing One-time Boot Session" in the top right of the screen, this will not take long.
+		\item select the thumb drive to boot from
+		\item follow the directions to wipe the hard drive and install the system with updates from the web
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{ROS base system install}
+	To make sure that we are getting a current build of the ROS software, the best advice is to use the installation instructions on the wiki.ros.org site.
+	\begin{itemize}
+		\item wiki.ros.org
+		\item select Installation
+		\item select ROS Melodic Morenia
+		\item select Ububtu
+		\item follow the instructions for the Desktop-Full Install
+		\item work your way all the way down to the Tutorials section.
+	\end{itemize}
+	The "sudo" that is used in front of most of the commands allows you to run these commands as the "Super User" (super user do).
+\end{frame}
+
+\begin{frame}
+	\frametitle{ROS versions}
+	ROS will release a new lts version about every two years. The last three have been released in May.
+	\begin{itemize}
+		\item 2016 ROS Kinetic Kame
+		\item 2018 ROS Melodic Morenia (we are using this one)
+		\item 2020 ROS Noetic Nijemys
+	\end{itemize}
+	While most things will work in the new version, there are always some changes.
+\end{frame}
+
+\begin{frame}
+	\frametitle{A little test}
+	Let's run something simple to see if the install worked. 
+	\begin{itemize}
+		\item In a new terminal window run:\\
+			\emph{roscore}
+		\item Open a second terminal window and type:\\
+			\emph{rosrun turtlesim turtlesim\_node}
+		\item Open a 3rd terminal window type:\\
+			\emph{rosrun turtlesim turtle\_teleop\_key}
+	\end{itemize}
+	You should have a small window with a turtle in it (you will get different turtles each time you start the turtlesim program). You can use the arrow keys on the keyboard to make it move around.\\
+	Note that you had to start three terminal windows to be able to run all of these programs. Later we will learn a way to start multiple nodes at one time.
+
+\end{frame}
+
+\begin{frame}
+	\frametitle{What is next}
+	Read through chapters 1 and 2 of ROS for Absolute Beginners and be ready to explore your computers next week. You should always be ready to run the example code in the text. To avoid a lot of typing and the inherent error involved, you can download the code from github.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Github}
+	\begin{itemize}
+		\item go to \emph{github.com}
+		\item if you do not already have one, create an account using your cub.uca email
+		\item share your user name with me
+		
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Robot Operating System (ROS) for Absolute Beginners}
+	\begin{figure}[htbp]
+   		\centering
+   		\includegraphics[width=0.2\textwidth]{9781484234044.jpg} 
+	\end{figure}
+	https://github.com/Apress/Robot-Operating-System-Abs-Begs.git
+\end{frame}
+
+\begin{frame}
+	\frametitle{Robot Operating System Cookbook}
+	\begin{figure}[htbp]
+   		\centering
+   		\includegraphics[width=0.2\textwidth]{ROS_Cookbook.png} 
+	\end{figure}
+	https://github.com/PacktPublishing/Robot-Operating-System-Cookbook.git
+\end{frame}
+
+\begin{frame}
+	\frametitle{github classroom}
+	\begin{itemize}
+		\item<1-> I will be sending you an invitation to a repository
+		\item<2-> You will need to accept it and clone the repository on your computer
+		\item<3-> This is where you will complete most of your assignments. (some will be on blackboard)
+	\end{itemize}
+\end{frame}
+
+\end{document}
