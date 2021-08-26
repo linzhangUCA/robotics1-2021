@@ -61,3 +61,16 @@ while theta < 3.1415926:
 def add_two_number(a, b):
     c = a + b
     return c
+
+# developing with pass
+def read_dist(sonar_1, sonar_2, sonar_3):
+    pass
+
+def compute_average(s1, s2, s3):
+    pass
+
+def take_action(ave):
+    pass
+
+def output_status():
+    pass
