@@ -1,3 +1,18 @@
+# inch to mm
+1/4*25.4
+
+# Fahrenheit to Celcius
+(99-32)*5/9
+
+# Pythagorean theorem
+(3**2+4**2)**.5
+
+# variables
+a = 2
+b = 2.71
+c = 'r'
+d = 'robot'
+
 # if statement
 x = input("Please enter a number: ")
 if x>0:
