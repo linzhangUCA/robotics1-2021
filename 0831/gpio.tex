@@ -148,9 +148,23 @@
             | >{\centering\arraybackslash}X 
         | >{\raggedleft\arraybackslash}X | }
         \hline
-        item 11 & item 12 & item 13 \\
+        GPIO Pin & Motor Driver Pin & Description \\
         \hline
-        item 21  & item 22  & item 23  \\
+        5  & Motor 1 \overline{SF}  & Status flag output  \\
+        \hline
+        6  & Motor 2 \overline{SF}  & Status flag output  \\
+        \hline
+        12  & Motor 1 PWM  & Motor speed input, max PWM frequency: 20kHz  \\
+        \hline
+        13  & Motor 2 PWM  & Motor speed input, max PWM frequency: 20kHz  \\
+        \hline
+        22  & Motor 1 EN  & Enable input  \\
+        \hline
+        23  & Motor 2 EN  & Enable input  \\
+        \hline
+        24  & Motor 1 DIR  & Motor direction input. LOW: A to B; HIGH: B to A.  \\
+        \hline
+        25  & Motor 2 DIR  & Motor direction input. LOW: A to B; HIGH: B to A.  \\
         \hline
     \end{tabularx}
 \end{frame}
