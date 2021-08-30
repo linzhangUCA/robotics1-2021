@@ -9,7 +9,7 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \graphicspath{ {./images/} }
-\usepackage{tabularx}
+\usepackage{multirow}
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
@@ -143,30 +143,47 @@
 \end{frame}
 
 \begin{frame}{Pin Mappings}
-    \begin{tabularx}{0.9\textwidth} { 
-            | >{\raggedright\arraybackslash}X 
-            | >{\centering\arraybackslash}X 
-        | >{\raggedleft\arraybackslash}X | }
+    % \begin{tabularx}{0.9\linewidth} { 
+            % | >{\raggedright\arraybackslash}X 
+            % | >{\centering\arraybackslash}X 
+        % | >{\raggedleft\arraybackslash}X | }
+        % \hline
+        % GPIO Pin & Motor Driver Pin & Description \\
+        % \hline
+        % 5  & Motor 1 $\overline{SF}$  & Status flag output  \\
+        % \hline
+        % 6  & Motor 2 $\overline{SF}$  & Status flag output  \\
+        % \hline
+        % 12  & Motor 1 PWM  & Motor speed input, max PWM frequency: 20kHz  \\
+        % \hline
+        % 13  & Motor 2 PWM  & Motor speed input, max PWM frequency: 20kHz  \\
+        % \hline
+        % 22  & Motor 1 EN  & Enable input  \\
+        % \hline
+        % 23  & Motor 2 EN  & Enable input  \\
+        % \hline
+        % 24  & Motor 1 DIR  & Motor direction input. LOW: A to B; HIGH: B to A.  \\
+        % \hline
+        % 25  & Motor 2 DIR  & Motor direction input. LOW: A to B; HIGH: B to A.  \\
+        % \hline
+    % \end{tabularx}
+    \begin{tabular}{ ccc }
         \hline
         GPIO Pin & Motor Driver Pin & Description \\
         \hline
-        5  & Motor 1 \overline{SF}  & Status flag output  \\
+        5  & Motor 1 $\overline{SF}$  & \multirow{2}{12em}{\scriptsize Status flag output}  \\
+        6  & Motor 2 $\overline{SF}$  &  \\
         \hline
-        6  & Motor 2 \overline{SF}  & Status flag output  \\
+        12  & Motor 1 PWM  & \multirow{2}{12em}{\scriptsize Motor speed input, max PWM frequency: 20kHz}  \\
+        13  & Motor 2 PWM  &  \\
         \hline
-        12  & Motor 1 PWM  & Motor speed input, max PWM frequency: 20kHz  \\
+        22  & Motor 1 EN  & \multirow{2}{12em}{\scriptsize Enable input}  \\
+        23  & Motor 2 EN  &  \\
         \hline
-        13  & Motor 2 PWM  & Motor speed input, max PWM frequency: 20kHz  \\
+        24  & Motor 1 DIR  & \multirow{2}{12em}{\scriptsize Motor direction input. LOW: A to B; HIGH: B to A.}  \\
+        25  & Motor 2 DIR  &  \\
         \hline
-        22  & Motor 1 EN  & Enable input  \\
-        \hline
-        23  & Motor 2 EN  & Enable input  \\
-        \hline
-        24  & Motor 1 DIR  & Motor direction input. LOW: A to B; HIGH: B to A.  \\
-        \hline
-        25  & Motor 2 DIR  & Motor direction input. LOW: A to B; HIGH: B to A.  \\
-        \hline
-    \end{tabularx}
+    \end{tabular}
 \end{frame}
 
 \begin{frame}{Python Library for Motor Driver}
