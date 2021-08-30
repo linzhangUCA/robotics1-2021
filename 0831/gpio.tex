@@ -9,6 +9,7 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \graphicspath{ {./images/} }
+\usepackage{tabularx}
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
@@ -74,7 +75,9 @@
 
 \begin{frame}{Conditions}
     \begin{itemize}
-        \item Use a condition for your loop.
+        \item Use a boolean condition for your loop.
+        \item $">", "<=", "==", "!="$ 
+        \item "and", "or", "not", "is"
     \end{itemize}
 \end{frame}
 
@@ -88,13 +91,68 @@
 
 \section{PWM}
 
-\begin{frame}{PWM}
+\begin{frame}{Pulse Width Modulation}
+    \begin{columns}
+        \column{0.5\textwidth}
+        \begin{figure}
+            \includegraphics[width=0.9\textwidth]{pwm}
+        \end{figure}
+
+        \column{0.5\textwidth}
+        {\scriptsize
+            \begin{itemize}
+                \item Simulate analogue signal with digital signal.
+                \item Frequency controls continuity.
+                \item Duty cycle controls signal strength. 
+            \end{itemize}
+        }
+
+    \end{columns}
+
 \end{frame}
 
+\begin{frame}{Hardware PWM \& Software PWM}
+    \begin{itemize}
+        \item Fully hardware PWM 
+            \begin{itemize}
+                \item The most accurate and possibly the most flexible.
+                \item Only available on GPIO 12/18 or GPIO 13/19.
+            \end{itemize}
+        \item DMA (Direct Memory Access) timed PWM.
+            \begin{itemize}
+                \item Intermediate accuracy but not flexible.
+                \item Available on all GPIO pins.
+            \end{itemize}
+        \item Software timed PWM.
+            \begin{itemize}
+                \item The timing accuracy will vary but very flexible.
+                \item Available on all GPIO pins.
+                \item Not good for servos.
+            \end{itemize}
+        \item May require installation of \href{https://abyz.me.uk/rpi/pigpio/}{pigpio} library.
+    \end{itemize}
+\end{frame}
+    
 \section{Motor Driver}
 
 \begin{frame}{Motor Driver}
+    \begin{figure}
+        \includegraphics[width=0.47\textwidth]{driver_board}
+        \includegraphics[width=0.47\textwidth]{driving_motors}
+    \end{figure}
 \end{frame}
 
+\begin{frame}{Pin Mappings}
+    \begin{tabularx}{0.9\textwidth} { 
+            | >{\raggedright\arraybackslash}X 
+            | >{\centering\arraybackslash}X 
+        | >{\raggedleft\arraybackslash}X | }
+        \hline
+        item 11 & item 12 & item 13 \\
+        \hline
+        item 21  & item 22  & item 23  \\
+        \hline
+    \end{tabularx}
+\end{frame}
 
 \end{document}
