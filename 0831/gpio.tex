@@ -143,30 +143,6 @@
 \end{frame}
 
 \begin{frame}{Pin Mappings}
-    % \begin{tabularx}{0.9\linewidth} { 
-            % | >{\raggedright\arraybackslash}X 
-            % | >{\centering\arraybackslash}X 
-        % | >{\raggedleft\arraybackslash}X | }
-        % \hline
-        % GPIO Pin & Motor Driver Pin & Description \\
-        % \hline
-        % 5  & Motor 1 $\overline{SF}$  & Status flag output  \\
-        % \hline
-        % 6  & Motor 2 $\overline{SF}$  & Status flag output  \\
-        % \hline
-        % 12  & Motor 1 PWM  & Motor speed input, max PWM frequency: 20kHz  \\
-        % \hline
-        % 13  & Motor 2 PWM  & Motor speed input, max PWM frequency: 20kHz  \\
-        % \hline
-        % 22  & Motor 1 EN  & Enable input  \\
-        % \hline
-        % 23  & Motor 2 EN  & Enable input  \\
-        % \hline
-        % 24  & Motor 1 DIR  & Motor direction input. LOW: A to B; HIGH: B to A.  \\
-        % \hline
-        % 25  & Motor 2 DIR  & Motor direction input. LOW: A to B; HIGH: B to A.  \\
-        % \hline
-    % \end{tabularx}
     \begin{tabular}{ ccc }
         \hline
         GPIO Pin & Motor Driver Pin & Description \\
@@ -193,10 +169,18 @@
     \end{block}
 \end{frame}
 
+\begin{frame}{gpiozero for Motor Driver}
+    The motor driver board can be controlled using \href{https://gpiozero.readthedocs.io/en/stable/api_output.html}{gpiozero} library. You may want to read how to use $PhaseEnableMotor()$ class.
+\end{frame}
+
 \begin{frame}{Soldering}
     \begin{alertblock}{Warning}
-        Better get yourselves prepared with the practicing kits.
+        \begin{itemize}
+            \item Watch \href{https://learn.adafruit.com/adafruit-guide-excellent-soldering}{Adafruit Guide To Excellent Soldering}
+            \item Better get yourselves prepared with the practicing kits.
+        \end{itemize}
     \end{alertblock}
 \end{frame}
 
 \end{document}
+
