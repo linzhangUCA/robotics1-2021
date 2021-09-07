@@ -41,13 +41,13 @@
 %------------------------------------------------------------
 %The next block of commands puts the table of contents at the beginning of each section and highlights the current section:
 
-% \AtBeginSection[]
-% {
-  % \begin{frame}
-    % \frametitle{Outline}
-    % \tableofcontents[currentsection]
-  % \end{frame}
-% }
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{outline}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
 %------------------------------------------------------------
 
 \begin{document}
@@ -57,64 +57,33 @@
 
 %---------------------------------------------------------
 %This block of code is for the table of contents after the title page
-% \begin{frame}
-% \frametitle{Outline}
-% \tableofcontents
-% \end{frame}
+\begin{frame}
+\frametitle{Outline}
+\tableofcontents
+\end{frame}
 %---------------------------------------------------------
 
-\section{Sonar Sensor}
+\section{Story of Linux}
 
-\begin{frame}{Ultrasound}
-    Ultrasound is high-pitched sound waves with frequencies higher than the audible limit of human hearing.
+\begin{frame}{Story of Linux}
     {\centering
-        \includegraphics[width=0.8\linewidth]{ultrasound_frequency}
+        \includegraphics[width=0.8\linewidth]{linus_torvald_first_linux_email}
     }
 \end{frame}
 
-\begin{frame}{HC-SR04 Ultrasonic Distance Sensor}
-    \begin{columns}
-        \column{0.5\textwidth}
-        \includegraphics[width=1.1\linewidth]{HC-SR04}
-
-        \column{0.5\textwidth}
-        {\scriptsize
-            \begin{itemize} 
-                \item Consists of two ultrasonic transducers: a transmitter and a receiver. 
-                \item The transmitter converts electrical signal into 40 KHz ultrasonic sound pulses. 
-                \item The receiver listens for the transmitted pulses. 
-                \item If receives the pulses back, produces an output pulse to determine the distance. 
-            \end{itemize} 
-        }
-    \end{columns}
+\begin{frame}{Linux Distros}
+    Distro is a complete operating system based on the Linux kernel that contains a bunch of packages and libraries.
+    \begin{itemize} 
+        \item Debian(for home users)
+        \item Redhat(for enterprises)
+        \item Slackware
+        \item Android
+    \end{itemize} 
 \end{frame}
 
-\begin{frame}{HC-SR04}
-    \begin{columns}
-        \column{0.5\textwidth}
-        \includegraphics[width=1.1\linewidth]{HC-SR04}
-
-        \column{0.5\textwidth}
-        {\scriptsize
-            \begin{tabular}{ cc }
-                \hline
-                Operating Voltage & 5 V  \\
-                \hline
-                Operating Current & 15 mA  \\
-                \hline
-                Ultrasound Frequency & 40 kHz  \\
-                \hline
-                Max Range & 4 m  \\
-                \hline
-                Min Range & 2 cm  \\
-                \hline
-                Ranging Accuracy & 3 mm  \\
-                \hline
-                Measuring Angle & 15 degree  \\
-                \hline
-            \end{tabular}
-        }
-    \end{columns}
+\section{Linux Command Line}
+\begin{frame}{Linux Command Line}
+    The Linux command line is a text interface to your computer.
 \end{frame}
 
 \begin{frame}{HC-SR04 - No Object Detected}
