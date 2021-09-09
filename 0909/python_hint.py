@@ -1,7 +1,4 @@
 """
-Use LED in 4 different colors: GREEN, BLUE, RED, YELLOW and 2 buttons (B1 and B2) to indicate status of the robot.
-Workflow:
-1. Light up LEDs one by one in order: RED for 1 second >> YELLOW for 2 seconds >> BLUE for 3 seconds >> GREEN for 4 seconds >> blink ALL in 2Hz for 2 seconds.
 2. Slowly blink GREEN use PWM (2 seconds gradually on and 2 seconds gradually off). Press B1, GREEN stays on. Press B1 again, GREEN gets back to PWM blinking mode.
 3. Count time consumption of GREEN stays on (GO). DO NOT count GREEN blink (GB) time.
 4. If GO takes more than 10 seconds, light up YELLOW (other LED will remain their status). 
@@ -17,8 +14,8 @@ RED = LED(21)
 YELLOW = LED(20)
 #  blue = LED(12)
 green = PWMLED(19, frequency=1000)
-plpa = Button(5, hold_time=3)
-rese = Button(6, hold_time=3)
+plpa = Button(5, hold_time=3)  # B1
+rese = Button(6, hold_time=3)  # B2
 
 # set duty cycle for green
 duty_cycles = list(range(0, 101)) + list(range(100, -1, -1))  # 0<dc<1
