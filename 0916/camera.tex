@@ -67,14 +67,20 @@
 
 \section{RaspberryPi Camera}
 
-\begin{frame}{Installation}
-    \centering
-    \includegraphics[width=0.8\linewidth]{picamera_attached}
+\begin{frame}{RaspberryPi Camera}
+    \begin{columns}
+        \column{0.5\textwidth}
+        \includegraphics[width=0.9\textwidth]{picamera_attached}
+
+        \column{0.5\textwidth}
+        \includegraphics[width=0.9\textwidth]{camera_variations}
+    \end{columns}
 \end{frame}
 
 \begin{frame}[fragile]
     \frametitle{picamera Library}
     Refer to the \href{https://projects.raspberrypi.org/en/projects/getting-started-with-picamera}{tutorial} and the official \href{https://picamera.readthedocs.io/en/release-1.13/}{documents}.
+    \rule{\textwidth}{1pt}   
     \scriptsize
     \begin{minted}{python}
         from picamera import PiCamera
@@ -86,13 +92,15 @@
         sleep(5)
         camera.stop_preview()
     \end{minted}
+    \rule{\textwidth}{1pt}   
 \end{frame}
 
 \section{OpenCV}
 
 \begin{frame}[fragile]
     \frametitle{OpenCV Video Capturing}
-    \scriptsize
+    \rule{\textwidth}{1pt}   
+    {\scriptsize
     \begin{minted}{python} 
         import cv2
 
@@ -111,7 +119,27 @@
         cap.release()
         cv2.destroyAllWindows()
     \end{minted} 
+}
+    \rule{\textwidth}{1pt}   
 \end{frame}
+
+\begin{frame}{ArUco Marker}
+    \begin{columns}
+        \column{0.5\textwidth}
+        An ArUco marker is a synthetic square marker composed by a wide black border and a inner binary matrix which determines its identifier (id). 
+        {\scriptsize
+            \begin{itemize}
+                \item Camera calibration
+                \item Object size estimation
+                \item Measuring distance
+                \item 3D pose estimation
+            \end{itemize}
+        }
+        \column{0.5\textwidth}
+        \includegraphics[width=0.8\linewidth]{aruco_markers}
+    \end{columns}
+\end{frame}
+
 
 \end{document}
 
