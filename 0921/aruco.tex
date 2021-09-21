@@ -68,9 +68,27 @@
 
 \begin{frame}[fragile]
 \frametitle{Install OpenCV}
+
+Install OpenCV for Python if you only want to detect the markers:
+{\scriptsize
     \begin{minted}{bash}
         sudo apt install python3-opencv
     \end{minted}
+}
+
+To get the latest OpenCV in Python, so that you can access more updated features:
+{\scriptsize
+    \begin{minted}{bash}
+        pip3 install opencv-contrib-python 
+        sudo apt-get install -y libatlas-base-dev \
+        libhdf5-dev \
+        libhdf5-serial-dev \
+        libatlas-base-dev \
+        libjasper-dev \
+        libqtgui4 \
+        libqt4-test
+    \end{minted}
+}
 \end{frame}
 
 \begin{frame}{ArUco Marker}
