@@ -66,6 +66,13 @@
 %---------------------------------------------------------
 
 
+\begin{frame}[fragile]
+\frametitle{Install OpenCV}
+    \begin{minted}{bash}
+        sudo apt install python3-opencv
+    \end{minted}
+\end{frame}
+
 \begin{frame}{ArUco Marker}
     \begin{columns}
         \column{0.5\textwidth}
@@ -84,10 +91,9 @@
     \end{columns}
 \end{frame}
 
-
 \begin{frame}{Markers and Dictionaries}
 
-    $cv2.aruco.DICT_NxN_M$
+    $cv2.aruco.DICT\_NXN\_M$
     {\scriptsize
         \begin{itemize}
             \item The dictionary size, $M$, is the number of markers that compose the dictionary. 
@@ -151,8 +157,8 @@
     \begin{minted}{python}
         import cv2
 
-        arucoDict = cv2.aruco.Dictionary_get(cv2.aruco.DICT_4x4_50)
-        arucoParams = cv2.aruco.DetectroParameters_create()
+        arucoDict = cv2.aruco.Dictionary_get(cv2.aruco.DICT_4X4_50)
+        arucoParams = cv2.aruco.DetectorParameters_create()
 
         vid = cv2.VideoCapture(0)
         while True:
