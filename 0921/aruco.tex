@@ -86,7 +86,8 @@ To get the latest OpenCV in Python, so that you can access more updated features
         libatlas-base-dev \
         libjasper-dev \
         libqtgui4 \
-        libqt4-test
+        libqt4-test \
+        numpy --upgrade
     \end{minted}
 }
 \end{frame}
@@ -132,7 +133,7 @@ To get the latest OpenCV in Python, so that you can access more updated features
         import numpy as np
         import matplotlib.pyplot as plt
 
-        dictionary = cv2.aruco.Dictionary_get(cv2.aruco.DICT_4x4_50)
+        dictionary = cv2.aruco.Dictionary_get(cv2.aruco.DICT_4X4_50)
         id = 23
         resolution = 300
         output_array = np.zeros((300, 300, 1), dtype="uint8")
