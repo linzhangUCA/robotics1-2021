@@ -1,0 +1,131 @@
+\documentclass[12pt,letterpaper]{beamer}
+\usetheme{Copenhagen}
+\usecolortheme{seahorse}
+\setbeamertemplate{section in toc}{\inserttocsection}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{multirow}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+}
+\usepackage{minted}
+
+\title[Robotics I]
+{ENGR 3421: ROBOTICS I}
+\subtitle{Python Advanced}
+
+\author[Zhang, Lin]
+{Dr. Lin Zhang}
+\institute[UCA] % (optional)
+{
+  Department of Physics and Astronomy\\
+  University of Central Arkansas
+}
+\date[Robotics1 2021] % (optional)
+{September 23, 2021}
+\logo{\includegraphics[height=1cm]{../images/uca_bear_logo.png}}
+
+
+%End of title page configuration block
+%------------------------------------------------------------
+
+%------------------------------------------------------------
+%The next block of commands puts the table of contents at the beginning of each section and highlights the current section:
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Outline}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+%------------------------------------------------------------
+
+\begin{document}
+
+%The next statement creates the title page.
+\frame{\titlepage}
+
+%---------------------------------------------------------
+%This block of code is for the table of contents after the title page
+\begin{frame}
+\frametitle{Outline}
+\tableofcontents
+\end{frame}
+%---------------------------------------------------------
+
+\section{Class}
+
+\begin{frame}{Object-Oriented Programming}
+
+Object Oriented programming (OOP) is a programming paradigm that relies on the concept of classes and objects. 
+It is used to structure a software program into simple, reusable pieces of code blueprints (usually called classes), which are used to create individual instances of objects.
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Function w/o Return}
+        {\scriptsize
+        \begin{minted}{python}
+            def forward(motor1, motor2, speed=1):
+                """
+                Args:
+                    motor1: object instantiate from Motor class
+                    motor2: object instantiate from Motor class
+                    speed: scalar in range [0,1]
+                Return:
+                    None
+                """
+                motor1.set_speed(speed)
+                motor2.set_speed(speed)
+        
+        \end{minted}
+        }
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Function w/ Return}
+
+        {\scriptsize
+        \begin{minted}{python}
+            def compute_center(ul_coord, ur_coord, lr_coord, ll_coord):
+                """
+                Args:
+                    ul_coord: array with shape (2,) or list with length 2
+                    ur_coord: [x, y]
+                    lr_coord: e.g. array(321, 456)
+                    ll_coord: e.g. [321, 456]
+                Return:
+                    center_coord: coordinate of center of the box represented 
+                    by a list with length of 2.
+                """
+                mean_x = (ul_coord[0] + \
+                          ur_coord[0] + \
+                          lr_coord[0] + \
+                          ll_coord[0]) / 4
+                mean_y = (ul_coord[1] + \
+                          ur_coord[1] + \
+                          lr_coord[1] + \
+                          ll_coord[1]) / 4
+                center_coord = [mean_x, mean_y]
+        
+                return center_coord
+        \end{minted}
+        }
+
+\end{frame}
+
+
+\end{document}
+
+
