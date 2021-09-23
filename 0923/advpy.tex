@@ -130,7 +130,7 @@ class Robot:
         self.target = target
 
 # make an instance
-bot = Robot(name='bouncer', target=0)
+bot = Robot(name='stalker', target=0)
 # check status of the instance 
 bot.name
 bot.target
@@ -158,9 +158,9 @@ class Robot:
     def switch_target(self, new_target):
         self.target = new_target
 # use functions 
-bot = Robot(name='bouncer', target=0)
+bot = Robot(name='stalker', target=0)
 im = np.random.uniform(0,255,(640,480,3))
-print("Marker detected: {}".format(bot.is_marker_detected(img)))
+print("Marker detected: {}".format(bot.is_marker_detected(im)))
 bot.target
 bot.switch_target(4)
 bot.target
@@ -176,13 +176,13 @@ bot.target
 class NewRobot(Robot):
 
     def switch_target(self, new_target):
-        assert new_target < 1000:
+        assert new_target < 1000
         self.target = new_target
 
     def make_noise(self):
-        print("Robot {} made some noise".format(self.name))
+        print("Robot {} shouted: 'Huray!'".format(self.name))
 # use functions 
-bot = NewRobot(name='bouncer', target=0)
+bot = NewRobot(name='follower', target=30)
 im = np.random.uniform(0,255,(640,480,3))
 print("Marker detected: {}".format(bot.is_marker_detected(img)))
 bot.target
@@ -193,11 +193,104 @@ bot.make_noise()
     }
 \end{frame}
 
-\begin{frame}{API and Source Code}
+\section{NumPy}
+\begin{frame}[fragile]
+    \frametitle{Source Code}
+
+    \begin{itemize}
+        \item Read documentation.
+        \item Read source code
+    \end{itemize}
+    Locate pip installed package: 
+    \begin{minted}{bash}
+    pip3 show gpiozero
+    \end{minted}
 \end{frame}
 
-\begin{frame}{Numpy}
+\begin{frame}[fragile]
+    \frametitle{NumPy}
+
+    \href{https://numpy.org/doc/stable/index.html}{NumPy} is the fundamental package for scientific computing in Python. To install:
+    \begin{minted}{bash}
+    pip3 install numpy
+    \end{minted}
 \end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{NumPy Getting Started}
+    {\footnotesize
+        \begin{block}{What's the difference between a Python list and a NumPy array? }
+            While a Python list can contain different data types within a single list, all of the elements in a NumPy array should be homogeneous. 
+            NumPy gives you an enormous range of fast and efficient ways of creating arrays and manipulating numerical data inside them.
+        \end{block}
+    }
+    {\scriptsize
+    \begin{minted}{python}
+import numpy as np
+v = np.array([1, 2, 3, 4, 5, 6])
+m = np.array([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])
+print(a[0])
+print(m[0])
+print(m[0,1])
+l = m.tolist()
+print(l[0,1])
+print(l[0][1])
+print(m[0][1])
+
+    \end{minted}
+    }
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{NumPy Array Operations}
+    {\scriptsize
+    \begin{minted}{python}
+np.zeros(4)
+np.ones(4)
+np.empty(4)
+np.arange(4)
+a = np.array([1, 2, 3, 4])
+b = np.array([5, 6, 7, 8])
+print(a + b) # try adding two list
+print(a * b)
+print(a / b)
+print (a + 4)
+    \end{minted}
+    }
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{NumPy Array Shape}
+    {\scriptsize
+    \begin{minted}{python}
+a = np.arange(12)
+b = a.reshape((3,4))
+c = a.reshape((1,12))
+print(a.shape)
+print(b.shape)
+print(c.shape)
+print("a size:{}, b size: {}, c size: {}".format(a.size, b.size, c.size))
+    \end{minted}
+    }
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Plot NumPy Array}
+
+    Install \href{https://matplotlib.org/}{Matplotlib} before running the following
+
+    {\scriptsize
+    \begin{minted}{python}
+import matplotlib.pyplot as plt
+x = np.linspace(0, 5, 20)
+y = np.linspace(0, 10, 20)
+plt.plot(x, y, 'purple')
+plt.plot(x, y, 'o')   
+plt.show()
+    \end{minted}
+    }
+\end{frame}
+
 
 \end{document}
 
