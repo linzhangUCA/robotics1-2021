@@ -72,22 +72,24 @@
 Install OpenCV for Python if you only want to detect the markers:
 {\scriptsize
     \begin{minted}{bash}
-        sudo apt install python3-opencv
+sudo apt install python3-opencv
     \end{minted}
 }
 
 To get the latest OpenCV in Python, so that you can access more updated features:
 {\scriptsize
     \begin{minted}{bash}
-        pip3 install opencv-contrib-python 
-        sudo apt-get install -y libatlas-base-dev \
-        libhdf5-dev \
-        libhdf5-serial-dev \
-        libatlas-base-dev \
-        libjasper-dev \
-        libqtgui4 \
-        libqt4-test \
-        numpy --upgrade
+pip3 install opencv-contrib-python numpy --upgrade
+sudo apt-get install -y libatlas-base-dev \
+libhdf5-dev \
+libhdf5-serial-dev \
+libatlas-base-dev \
+libjasper-dev \
+libqtgui4 \
+libqt4-test
+# optional, install matplotlib
+sudo apt install python3-gi-cairo
+pip3 install matplotlib
     \end{minted}
 }
 \end{frame}
@@ -143,7 +145,7 @@ marker = cv2.aruco.drawMarker(
     id, 
     resolution, 
     output_array, 
-    boarder_size
+    border_size
 )
 
 plt.imshow(marker)
